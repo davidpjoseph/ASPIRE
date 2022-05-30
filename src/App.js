@@ -37,9 +37,10 @@ import Counselling1 from './Pages/Teacher/Counselling1';
 import StudentCoun from './Pages/Teacher/StudentCoun';
 import StudentCoun2 from './Pages/Counsellor/StudentCoun2';
 import CardStudent from './Pages/Counsellor/CardStudent';
-import Graph from './components/List/Graph';
+import Classlist2 from './Pages/HOD/Classlist2';
 import Analysis1 from './Pages/Teacher/Courses/Analysis/Analysis1';
 import Analysis2 from './Pages/Teacher/Courses/Analysis/Analysis2';
+import Studentlist2 from './components/List/Studentlist2';
 
 function App() {
   
@@ -65,7 +66,6 @@ function App() {
             <Route path="course" element={<Courses />} />
             <Route path="course/analysis1" element={<Analysis1 />} />
             <Route path="course/analysis2" element={<Analysis2 />} />
-
             <Route path="uploads" element={<Input />} />
             <Route path="students/:id" element={<StudentCoun />} />
             <Route path="class" element={<Classlist />} />
@@ -78,10 +78,10 @@ function App() {
           </Route>
 
           <Route path="hod" element={<Hod />}>
-            <Route path="students" element={<Studentlist />} />
+            <Route path="students" element={<Studentlist2 />} />
             <Route path="students/:id" element={<Studentoverall />} />
             <Route path="attendance" element={<Attendance1 />} />
-            <Route path="performance" element={<Classlist />} />
+            <Route path="performance" element={<Classlist2 />} />
             <Route path="counselling" element={<Counselling />} />
           </Route>
         </Routes>
