@@ -1,9 +1,7 @@
 import React from 'react'
-import Attendance from '../../components/List/Attendance';
 import Topbar from '../../components/Topbar/Topbar'
 import Navbar from './Navbar'
-import Yearcard from './Yearcard';
-import Internal from "../../components/List/Internal";
+
 import {
   BrowserRouter as Router,
   Route,

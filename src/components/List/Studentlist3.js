@@ -1,14 +1,14 @@
-import "../../components/List/Form.css";
+import "./Form.css";
 import React, { useState, useEffect } from "react";
 import { db } from "../../Firebase/Config";
-import { ref, onValue, orderByChild, query, startAt } from "firebase/database";
+import { ref, onValue } from "firebase/database";
 import { Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-function Counselling1() {
+function Studentlist3() {
   const [data, setData] = useState({});
   useEffect(() => {
-    const dbRef = query(ref(db, "Weak/"), orderByChild("RS"), startAt(3));
+    const dbRef = ref(db, "Grade/");
     onValue(dbRef, (snapshot) => {
       if (snapshot.val() != null) {
         setData({ ...snapshot.val() });
@@ -35,8 +35,8 @@ function Counselling1() {
               <th>S3</th>
               <th>S4</th>
               <th>S5</th>
+              <th>CGPA</th>
               <th>Backlogs</th>
-              <th colspan={2}>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -50,19 +50,13 @@ function Counselling1() {
                   <td>{data[row].S3}</td>
                   <td>{data[row].S4}</td>
                   <td>{data[row].S5}</td>
+                  <td>{data[row].CGPA}</td>
                   <td>{data[row].RS}</td>
-                  {/*
-                        <td>{index}</td>					  
-						 <td>{row.data.Name}</td>
-                          */}
+                  {/*<td>{index}</td>*/}
+                  {/* <td>{row.data.Name}</td> */}
                   <td>
-                    <Link to={`/teacher/students/${data[row].RollNo}`}>
-                      <button className="buttonclick2">View Profile</button>
-                    </Link>
-                  </td>
-                  <td>
-                    <Link to={`/teacher/feedback/${data[row].RollNo}`}>
-                      <button className="buttonclick2">View Feedback</button>
+                    <Link to={`/hod/students/${data[row].RollNo}`}>
+                      <button className="buttonclick1">View Profile</button>
                     </Link>
                   </td>
                 </tr>
@@ -75,4 +69,4 @@ function Counselling1() {
   );
 }
 
-export default Counselling1;
+export default Studentlist3;

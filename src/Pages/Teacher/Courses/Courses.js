@@ -1,26 +1,26 @@
-import React from 'react'
-import "./Courses.css"
-import { NavLink } from "react-router-dom";
-
+import React, { useState } from "react";
+import "../Timetable.css";
+import ViewCourses from "./ViewCourses";
+import CreateCourse from "./CreateCourse";
 function Courses() {
+  const [active, setActive] = useState("Create");
+
   return (
-    <div className="main-container">
-      <NavLink to="analysis1">
-        <div className="cardcourse card-1">
-          <h4 className="cardcourse_title">CS 203</h4>
-          <h2 className="cardcourse__title">Software Engineering Project Management</h2>
-        </div>
-      </NavLink>
-      <NavLink to="analysis2">
-      <div className="cardcourse card-2">
-        <h4 className="cardcourse_title">CS 205</h4>
-        <h2 className="cardcourse__title">
-          Object Oriented Programming
-        </h2>
+    <div>
+      <nav>
+        <button onClick={() => setActive("Create")} className="time_button1">
+          Create Course
+        </button>
+        <button onClick={() => setActive("View")} className="time_button2">
+          View Course
+        </button>
+      </nav>
+      <div>
+        {active === "View" && <ViewCourses/>}
+        {active === "Create" && <CreateCourse />}
       </div>
-    </NavLink>
     </div>
   );
 }
 
-export default Courses
+export default Courses;

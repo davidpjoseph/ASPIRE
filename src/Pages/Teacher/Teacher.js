@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../../Pages/Teacher/Navbar'
 import Topbar from '../../components/Topbar/Topbar'
-import Courses from './Courses/Courses'
+import Courses from './Courses/ViewCourses'
 import Input from './Input/Input'
 import {
   BrowserRouter as Router,

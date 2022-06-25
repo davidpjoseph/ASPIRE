@@ -14,7 +14,6 @@ function Hodsignup() {
   const[fullname,setFullname]=useState('');
   const[email,setEmail]=useState('');
   const [password,setPassword] = useState('');
-  const [role, setRole] = useState('');
   const {signUp} = useUserAuth();
   const navigate= useNavigate();
   const [error,setError] = useState("");
@@ -24,7 +23,6 @@ function Hodsignup() {
     set(ref(db, "User/" +fullname), {
       email: email,
       name: fullname,
-      role: role,
     });
   }
 
@@ -41,13 +39,10 @@ function Hodsignup() {
   
   return (
     <div>
-      <div className="container">
-        <div className="title">Sign Up</div>
-        <div className="content">
-          <form onSubmit={handleSubmit}>
-            <div className="user-details">
+      <div className="login-page">
+        <div className="form">
+          <form className="login-form" onSubmit={handleSubmit}>
               <div className="input-box">
-                <span className="details">Full Name</span>
                 <input
                   type="text"
                   value={fullname}
@@ -56,9 +51,9 @@ function Hodsignup() {
                   required
                 ></input>
               </div>
-              
+
               <div className="input-box">
-                <span className="details">Email</span>
+                
                 <input
                   type="email"
                   value={email}
@@ -69,7 +64,7 @@ function Hodsignup() {
               </div>
 
               <div className="input-box">
-                <span className="details">Password</span>
+                
                 <input
                   type="password"
                   value={password}
@@ -78,23 +73,10 @@ function Hodsignup() {
                   required
                 ></input>
               </div>
-              
-              <div className="input-box">
-                <span className="details">Role</span>
-                <input
-                  type="text"
-                  value={role}
-                  onChange={(e) => setRole(e.target.value)}
-                  placeholder="HoD"
-                  required
-                />
-              </div>
-            </div>
-
+           
             <div className="input-box button">
               <input type="submit" value="Register"></input>
             </div>
-
             {error && <Alert variant="danger">{error}</Alert>}
             <Link to="/">
               <p className="message-log">

@@ -43,7 +43,14 @@ function Navbar() {
             <div id="title">Counselling</div>
           </li>
         </NavLink>
-        
+        <NavLink to="timetablehod" activeClassName="active">
+          <li className="row">
+            <div id="icon">
+              <EventNoteIcon />
+            </div>
+            <div id="title">Timetable</div>
+          </li>
+        </NavLink>
       </ul>
     </div>
   );

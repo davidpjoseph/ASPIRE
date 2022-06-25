@@ -55,7 +55,7 @@ function Studentlist2() {
                   {/*<td>{index}</td>*/}
                   {/* <td>{row.data.Name}</td> */}
                   <td>
-                    <Link to={`/hod/students/${data[row].RollNo}`}>
+                    <Link to={`/teacher/students/${data[row].RollNo}`}>
                       <button className="buttonclick1">View Profile</button>
                     </Link>
                   </td>

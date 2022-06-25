@@ -18,7 +18,7 @@ function Studsignup() {
   const [password,setPassword] = useState('');
   const [classname, setClass] = useState('');
   const [batch, setBatch] = useState("");
-  const [role, setRole] = useState("");
+  const [sem, setSem] = useState("");
   const [date, setDate] = useState("");
   const [admission, setAdmission] = useState("");
   const {signUp} = useUserAuth();
@@ -35,10 +35,10 @@ function Studsignup() {
      batch:batch,
      dob:date,
      admn:admission,
-     role:role,
+     sem:sem,
     })
   }
-
+    
 
    
 
@@ -70,7 +70,7 @@ function Studsignup() {
                   required
                 ></input>
               </div>
-              
+
               <div className="input-box">
                 <span className="details">Email</span>
                 <input
@@ -103,6 +103,16 @@ function Studsignup() {
                 ></input>
               </div>
               <div className="input-box">
+                <span className="details">Semester</span>
+                <input
+                  type="text"
+                  value={sem}
+                  onChange={(e) => setSem(e.target.value)}
+                  placeholder="S7"
+                  required
+                />
+              </div>
+              <div className="input-box">
                 <span className="details">Class</span>
                 <input
                   type="text"
@@ -131,16 +141,6 @@ function Studsignup() {
                   placeholder="18/CS/001"
                   required
                 ></input>
-              </div>
-              <div className="input-box">
-                <span className="details">Role</span>
-                <input
-                  type="text"
-                  value={role}
-                  onChange={(e) => setRole(e.target.value)}
-                  placeholder="Student"
-                  required
-                />
               </div>
             </div>
 

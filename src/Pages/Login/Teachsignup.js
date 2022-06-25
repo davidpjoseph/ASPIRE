@@ -5,7 +5,6 @@ import {useState} from 'react'
 import {Link, useNavigate } from "react-router-dom";
 import {useUserAuth} from "../../Context/userAuthContext"
 import {Alert} from 'react-bootstrap'
-import { uid } from "uid";
 import { db } from "../../Firebase/Config";
 import { ref, set } from "firebase/database";
 
@@ -14,21 +13,17 @@ function Teachsignup() {
   const[fullname,setFullname]=useState('');
   const[email,setEmail]=useState('');
   const [password,setPassword] = useState('');
-  const [classname, setClass] = useState('');
-  const [role, setRole] = useState('');
+  
+  
   const {signUp} = useUserAuth();
   const navigate= useNavigate();
   const [error,setError] = useState("");
 
 
   function writeUserData() {
-    const uuid = uid();
     set(ref(db, "User/"+fullname), {
-      uuid,
       email: email,
       name: fullname,
-      dept: classname,
-      role: role,
     });
   }
 
@@ -45,13 +40,11 @@ function Teachsignup() {
   
   return (
     <div>
-      <div className="container">
-        <div className="title">Sign Up</div>
-        <div className="content">
-          <form onSubmit={handleSubmit}>
-            <div className="user-details">
+      <div className="login-page">
+        <div className="form">
+          <form className="login-form" onSubmit={handleSubmit}>
+            
               <div className="input-box">
-                <span className="details">Full Name</span>
                 <input
                   type="text"
                   value={fullname}
@@ -61,7 +54,6 @@ function Teachsignup() {
                 ></input>
               </div>
               <div className="input-box">
-                <span className="details">Email</span>
                 <input
                   type="email"
                   value={email}
@@ -72,7 +64,6 @@ function Teachsignup() {
               </div>
 
               <div className="input-box">
-                <span className="details">Password</span>
                 <input
                   type="password"
                   value={password}
@@ -81,19 +72,7 @@ function Teachsignup() {
                   required
                 ></input>
               </div>
-              
-              <br></br>
-              <div className="input-box">
-                <span className="details">Role</span>
-                <input
-                  type="text"
-                  value={role}
-                  onChange={(e) => setRole(e.target.value)}
-                  placeholder="Teacher"
-                  required
-                />
-              </div>
-            </div>
+            
 
             <div className="input-box button">
               <input type="submit" value="Register"></input>

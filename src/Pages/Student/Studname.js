@@ -22,6 +22,8 @@ function Studname() {
   const {user}=useUserAuth();
   const [data,setData]=useState({});
   const useremail=user.email;
+  
+  
    useEffect(() => {
      const dbRef =query(ref(db, "User/"),orderByChild('email'),
       equalTo(useremail));
@@ -36,6 +38,7 @@ function Studname() {
        return()=>{
          setData({});
        }
+      
    }, []);
   
   return (

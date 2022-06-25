@@ -1,49 +1,41 @@
-import {Link,useNavigate} from 'react-router-dom'
+import { Link, useNavigate } from "react-router-dom";
 import React from "react";
-import './Login.css'
-import { useState, useEffect} from "react";
+import "./Login.css";
+import { useState, useEffect } from "react";
 import { Alert, alert } from "react-bootstrap";
 import { useUserAuth } from "../../Context/userAuthContext";
 
-
-
 function Login() {
-  
   const [email, setLoginEmail] = useState("");
   const [password, setLoginPassword] = useState("");
   const [error, setError] = useState("");
   const { logIn } = useUserAuth();
   const navigate = useNavigate();
-  const stud = "jasminjames544@gmail.com";
-  const hod="hod@gmail.com"
-  const teach="teacher@gmail.com"
-  const coun="counsellor@gmail.com"
+  const studweak = "jasminjames544@gmail.com";
+  const studbright = "jenniferjohnson@gmail.com";
+  const hod = "hodcsesjcet@gmail.com";
+  const teach = "teachercsesjcet@gmail.com";
+  const coun = "counsellorsjcet@gmail.com";
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       await logIn(email, password);
-      if(email===stud)
-      navigate("/student");
-      else if(email===teach)
-      navigate("/teacher")
-      else if(email===hod)
-      navigate("/hod")
-      else if(email===coun)
-      navigate("/counsellor")
-      else
-      navigate("/signin");
+      if (email === studweak) navigate("/student");
+      else if (email === studbright) navigate("/student");
+      else if (email === teach) navigate("/teacher");
+      else if (email === hod) navigate("/hod");
+      else if (email === coun) navigate("/counsellor");
+      else navigate("/signin");
     } catch (error) {
       setError(error.message);
     }
   };
-  
-  
-  
+
   return (
     <div>
-      <div class="login-page">
-        <div class="form">
-          <form class="login-form">
+      <div className="login-page">
+        <div className="form">
+          <form className="login-form">
             <input
               type="text"
               value={email}

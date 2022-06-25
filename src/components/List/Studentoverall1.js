@@ -2,34 +2,28 @@ import "./Form.css";
 import React from "react";
 import "../Graphs/Internal1/Internal1.css";
 import "../Graphs/Uniexam/Uniexam.css";
-import { Bar } from "react-chartjs-2";
-import { Line } from "react-chartjs-2";
 import { useUserAuth } from "../../Context/userAuthContext";
 import {
-  getDatabase,
   ref,
   onValue,
-  startAt,
-  orderByChild,
-  query,
-  equalTo,
 } from "firebase/database";
 import { db } from "../../Firebase/Config";
 import { Table } from "react-bootstrap";
 import {useState,useEffect} from "react"
+
 function Studentoverall1() {
+  
   const [data1, setData1] = useState({});
   const [data2, setData2] = useState({});
   const [data3, setData3] = useState({});
-  const[data,setData]=useState({});
   const { user } = useUserAuth();
-  const useremail = user.Name;
+  const useremail = user.email;
+  const bright="jenniferjohn@gmail.com";
+  const weak="jasminjames544@gmail.com";
+  
    useEffect(() => {
-    const dbRef1 = query(
-      ref(db, "Mark1/"),
-      orderByChild("Name"),
-      equalTo("Jasmine James")
-    );
+     if (useremail === weak) {
+      const dbRef1 = ref(db, "Mark1/6");
     onValue(dbRef1, (snapshot) => {
       if (snapshot.val() != null) {
         setData1({ ...snapshot.val() });
@@ -39,16 +33,40 @@ function Studentoverall1() {
     });
     return () => {
       setData1({});
-    };
+    };}
+     if (useremail === bright) {
+      const dbRef1 =ref(db, "Mark1/7");
+      onValue(dbRef1, (snapshot) => {
+        if (snapshot.val() != null) {
+          setData1({ ...snapshot.val() });
+        } else {
+          setData1({});
+        }
+      });
+      return () => {
+        setData1({});
+      };
+    }
+    else{
+       const dbRef1 = ref(db, "Mark1/3");
+       onValue(dbRef1, (snapshot) => {
+         if (snapshot.val() != null) {
+           setData1({ ...snapshot.val() });
+         } else {
+           setData1({});
+         }
+       });
+       return () => {
+         setData1({});
+       };
+    }
   }, []);
   console.log("student",data1);
+  
   useEffect(() => {
-    const dbRef2 = query(
-      ref(db, "Mark2/"),
-      orderByChild("Name"),
-      equalTo("Jasmine James")
-    );
-    onValue(dbRef2, (snapshot) => {
+    if (useremail === weak) {
+    const dbRef2 =ref(db, "Mark2/6");
+      onValue(dbRef2, (snapshot) => {
       if (snapshot.val() != null) {
         setData2({ ...snapshot.val() });
       } else {
@@ -57,14 +75,38 @@ function Studentoverall1() {
     });
     return () => {
       setData2({});
-    };
+    };}
+    if (useremail === bright) {
+      const dbRef2 =ref(db, "Mark2/7");
+      onValue(dbRef2, (snapshot) => {
+        if (snapshot.val() != null) {
+          setData2({ ...snapshot.val() });
+        } else {
+          setData2({});
+        }
+      });
+      return () => {
+        setData2({});
+      };
+    }
+    else{
+      const dbRef2 = ref(db, "Mark2/3");
+      onValue(dbRef2, (snapshot) => {
+        if (snapshot.val() != null) {
+          setData2({ ...snapshot.val() });
+        } else {
+          setData2({});
+        }
+      });
+      return () => {
+        setData2({});
+      };
+    }
   }, []);
+
   useEffect(() => {
-    const dbRef3 = query(
-      ref(db, "Grade/"),
-      orderByChild("Name"),
-      equalTo("Jasmine James")
-    );
+    if (useremail === bright) {
+    const dbRef3 =ref(db, "Grade/7");
     onValue(dbRef3, (snapshot) => {
       if (snapshot.val() != null) {
         setData3({ ...snapshot.val() });
@@ -74,7 +116,33 @@ function Studentoverall1() {
     });
     return () => {
       setData3({});
-    };
+    };}
+     if (useremail === weak) {
+       const dbRef3 = ref(db, "Grade/6");
+       onValue(dbRef3, (snapshot) => {
+         if (snapshot.val() != null) {
+           setData3({ ...snapshot.val() });
+         } else {
+           setData3({});
+         }
+       });
+       return () => {
+         setData3({});
+       };
+     }
+     else{
+       const dbRef3 = ref(db, "Grade/3");
+       onValue(dbRef3, (snapshot) => {
+         if (snapshot.val() != null) {
+           setData3({ ...snapshot.val() });
+         } else {
+           setData3({});
+         }
+       });
+       return () => {
+         setData3({});
+       };
+     }
   }, []);
     return (
       <>
@@ -94,22 +162,21 @@ function Studentoverall1() {
             </tr>
           </thead>
           <tbody>
-            {Object.keys(data1).map((row, index) => {
-              return (
+              
                 <tr>
                   {/*<td>{index}</td>*/}
                   <td></td>
                   {/* <td>{row.data.Name}</td> */}
                   <td>Internal 1</td>
-                  <td>{data1[row].cs201}</td>
-                  <td>{data1[row].cs203}</td>
-                  <td>{data1[row].cs205}</td>
-                  <td>{data1[row].cs207}</td>
-                  <td>{data1[row].cs209}</td>
-                  <td>{data1[row].cs265}</td>
+                  <td>{data1.cs201}</td>
+                  <td>{data1.cs203}</td>
+                  <td>{data1.cs205}</td>
+                  <td>{data1.cs207}</td>
+                  <td>{data1.cs209}</td>
+                  <td>{data1.cs265}</td>
                 </tr>
-              );
-            })}
+              
+            
           </tbody>
 
           <thead>
@@ -125,22 +192,22 @@ function Studentoverall1() {
           </tr> */}
           </thead>
           <tbody>
-            {Object.keys(data2).map((row, index) => {
-              return (
+            
+              
                 <tr>
                   {/*<td>{index}</td>*/}
                   <td className="row2"></td>
                   {/* <td>{row.data.Name}</td> */}
                   <td>Internal 2</td>
-                  <td>{data2[row].cs201}</td>
-                  <td>{data2[row].cs203}</td>
-                  <td>{data2[row].cs205}</td>
-                  <td>{data2[row].cs207}</td>
-                  <td>{data2[row].cs209}</td>
-                  <td>{data2[row].cs265}</td>
+                  <td>{data2.cs201}</td>
+                  <td>{data2.cs203}</td>
+                  <td>{data2.cs205}</td>
+                  <td>{data2.cs207}</td>
+                  <td>{data2.cs209}</td>
+                  <td>{data2.cs265}</td>
                 </tr>
-              );
-            })}
+              
+           
           </tbody>
 
           <thead>
@@ -157,23 +224,23 @@ function Studentoverall1() {
             </tr>
           </thead>
           <tbody>
-            {Object.keys(data3).map((row, index) => {
-              return (
+            
+              
                 <tr>
                   {/*<td>{index}</td>*/}
                   <td></td>
                   {/* <td>{row.data.Name}</td> */}
 
                   <td>SGPA</td>
-                  <td>{data3[row].S1}</td>
-                  <td>{data3[row].S2}</td>
-                  <td>{data3[row].S3}</td>
-                  <td>{data3[row].S4}</td>
-                  <td>{data3[row].S5}</td>
-                  <td>{data3[row].RS}</td>
+                  <td>{data3.S1}</td>
+                  <td>{data3.S2}</td>
+                  <td>{data3.S3}</td>
+                  <td>{data3.S4}</td>
+                  <td>{data3.S5}</td>
+                  <td>{data3.RS}</td>
                 </tr>
-              );
-            })}
+              
+          
           </tbody>
         </Table>
         

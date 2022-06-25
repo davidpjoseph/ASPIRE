@@ -25,14 +25,24 @@
 .buttonclick1:hover{
   background-color: rgb(117, 192, 232);
 }
+
 .buttonclick2 {
   color: rgb(13, 1, 1);
   background-color: aliceblue;
   border-radius: 5px;
   width: 100px;
 }
-
 .buttonclick2:hover {
+  background-color: rgb(117, 192, 232);
+}
+.buttonclick3 {
+  color: rgb(13, 1, 1);
+  background-color: aliceblue;
+  border-radius: 5px;
+  width: 125px;
+}
+
+.buttonclick3:hover {
   background-color: rgb(117, 192, 232);
 }
 .single {
@@ -46,6 +56,7 @@
   background-color: white;
   position: relative;
 }
+
 
 .single_attendance {
   font-family: arial, sans-serif;
@@ -70,6 +81,17 @@
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   position: relative;
 }
+.single_subcoun {
+  font-family: arial, sans-serif;
+  left: 265px;
+  top: -680px;
+  width: 24cm;
+  border: 1px solid rgb(247, 245, 245);
+  text-align: center;
+  padding: 14px 28px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  position: relative;
+}
 .single_sub1 {
   font-family: arial, sans-serif;
   left: 265px;
@@ -85,7 +107,7 @@
 .stud_weak {
   font-family: arial, sans-serif;
   left: 1060px;
-  top: -1186px;
+  top: -1128px;
   width: 10cm;
   border: 1px solid rgb(252, 251, 251);
   text-align: center;
@@ -96,7 +118,7 @@
 .stud_weak2 {
   font-family: arial, sans-serif;
   left: 1060px;
-  top: -1322px;
+  top: -1200px;
   width: 10cm;
   border: 1px solid rgb(252, 251, 251);
   text-align: center;
@@ -108,7 +130,7 @@
 .stud_bright {
   font-family: arial, sans-serif;
   left: 1061px;
-  top: -1234px;
+  top: -1188px;
   width: 10cm;
   border: 1px solid rgb(255, 254, 254);
   text-align: center;
@@ -119,7 +141,7 @@
 .stud_bright2 {
   font-family: arial, sans-serif;
   left: 1061px;
-  top: -1374px;
+  top: -1214px;
   width: 10cm;
   border: 1px solid rgb(255, 254, 254);
   text-align: center;
@@ -157,4 +179,22 @@ td {
   padding: 5px;
   text-align: center;
 }
+.timetablebox {
+  font-family: arial, sans-serif;
+  left: 440px;
+  top: -664px;
+  width: 22cm;
+  border: 1px solid rgb(255, 254, 254);
+  text-align: center;
+  padding: 14px 28px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  position: relative;
+}
 
+.buttonset {
+  position: relative;
+  top: -624px;
+  left: 1217px;
+  width: 50px;
+  margin-bottom: 10px;
+}

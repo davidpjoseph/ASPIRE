@@ -11,7 +11,7 @@ import FileDownloadIcon from '@mui/icons-material/FileDownload';
 const saveFile1 = () => {
   saveAs(
     "https://docs.google.com/spreadsheets/d/1JJKJEZAZYy87aE7TBysdY9wDzM4iWRiU/edit?usp=sharing&ouid=110742977992300416983&rtpof=true&sd=true",
-    "Internal1.xltx"
+    "Internal1.xlsx"
   );
 };const saveFile2 = () => {
   saveAs(
@@ -130,7 +130,7 @@ function Input() {
         cs209: d.CS209,
         cs265: d.CS265,
       })
-    );
+    ); 
   }
   function writeToDatabase5() {
     items.map((d) =>
@@ -270,7 +270,7 @@ function Input() {
           </p>
         </div>
         <div className="card card-1">
-          <h2 className="card__title">Subject 1</h2>
+          <h2 className="card__title">CS302</h2>
           <p className="download5" onClick={saveFile5}>
             <FileDownloadIcon />
           </p>
@@ -294,7 +294,7 @@ function Input() {
           </p>
         </div>
         <div className="card card-1">
-          <h2 className="card__title">Subject 2</h2>
+          <h2 className="card__title">CS306</h2>
           <p className="download6" onClick={saveFile6}>
             <FileDownloadIcon />
           </p>

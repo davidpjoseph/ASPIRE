@@ -1,8 +1,8 @@
-import React from 'react'
-import Internal1 from '../../components/Graphs/Internal1/Internal1'
-import Uniexam from '../../components/Graphs/Uniexam/Uniexam';
-import './Dashboard.css'
-import Studname from './Studname';
+import React from "react";
+import Internal1 from "../../components/Graphs/Internal1/Internal1";
+import Uniexam from "../../components/Graphs/Uniexam/Uniexam";
+import "./Dashboard.css";
+import Studname from "./Studname";
 function Dashboard() {
   return (
     <>
@@ -14,9 +14,9 @@ function Dashboard() {
       </div>
       <div className="dash_uni">
         <Uniexam />
-  </div>
+      </div>
     </>
   );
 }
 
-export default Dashboard
+export default Dashboard;
