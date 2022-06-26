@@ -19,7 +19,7 @@ import Performance from './Pages/Student/Performance';
 import Classlist from './Pages/Teacher/Class/Classlist'
 import Courses from './Pages/Teacher/Courses/Courses';
 import Input from './Pages/Teacher/Input/Input';
-import {RealtimeData} from './Pages/Teacher/Input/Input2';
+import {RealtimeData} from './Pages/Teacher/Input/Input3';
 import Studentlist from './components/List/Studentlist';
 import Results from './components/List/Results';
 import Attendmain from './Pages/Student/Attendmain';
@@ -52,6 +52,7 @@ import Viewfeed from './Pages/Counsellor/Viewfeed';
 import Viewnotes from './Pages/Counsellor/Viewnotes';
 import Teacherfeed from './Pages/Teacher/Teacherfeed';
 import Mainanalysis from './Pages/Teacher/Courses/Analysis/Mainanalysis';
+import Inputmain from './Pages/Teacher/Input/Inputmain';
 
 function App() {
   
@@ -77,7 +78,7 @@ function App() {
           <Route path="teacher" element={<Teacher />}>
             <Route path="course" element={<Courses />} />
             <Route path="analysis/:id" element={<Mainanalysis />} />
-            <Route path="uploads" element={<Input />} />
+            <Route path="uploads" element={<Inputmain />} />
             <Route path="students/:id" element={<StudentCoun />} />
             <Route path="feedback/:id" element={<Teacherfeed />} />
             <Route path="class" element={<Classlist />} />

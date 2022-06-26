@@ -28,20 +28,11 @@ const saveFile1 = () => {
     "https://docs.google.com/spreadsheets/d/1w7MHjPFYt1s15bPTQbTtww7r65wtsRC5/edit?usp=sharing&ouid=110742977992300416983&rtpof=true&sd=true",
     "Attendance.xlsx"
   );
-};const saveFile5 = () => {
-  saveAs(
-    "https://docs.google.com/spreadsheets/d/1zhg6kLKMM5mELt58zzbIDn3afXBBzdmU/edit?usp=sharing&ouid=110742977992300416983&rtpof=true&sd=true",
-    "Subject1.xlsx"
-  );
-};
-const saveFile6 = () => {
-  saveAs(
-    "https://docs.google.com/spreadsheets/d/1PH6faZozAaxxA1ARQyD-ZsYA0vryzzsn/edit?usp=sharing&ouid=110742977992300416983&rtpof=true&sd=true",
-    "Subject2.xlsx"
-  );
 };
 
 function Input() {
+  
+  
   const notify = () =>
     toast.success("File Uploaded Successfully", {
       position: "top-center",
@@ -132,29 +123,7 @@ function Input() {
       })
     ); 
   }
-  function writeToDatabase5() {
-    items.map((d) =>
-      set(ref(db, "Subject1/" + d.RollNo), {
-        RollNo: d.RollNo,
-        Name: d.Name,
-        internal1: d.Internal1,
-        internal2: d.Internal2,
-        attendance: d.Attendance,
-      })
-    );
-  }
-  function writeToDatabase6() {
-    items.map((d) =>
-      set(ref(db, "Subject2/" + d.RollNo), {
-        RollNo: d.RollNo,
-        Name: d.Name,
-        internal1: d.Internal1,
-        internal2: d.Internal2,
-        attendance: d.Attendance,
-      })
-    );
-
-  }
+  
   function writeToDatabase7() {
     items.map((d) =>
       set(ref(db, "Weak/" + d.RollNo), {
@@ -269,54 +238,7 @@ function Input() {
             </button>
           </p>
         </div>
-        <div className="card card-1">
-          <h2 className="card__title">CS302</h2>
-          <p className="download5" onClick={saveFile5}>
-            <FileDownloadIcon />
-          </p>
-          <p className="card__apply">
-            <br></br>
-            <input
-              type="file"
-              onChange={(e) => {
-                const file = e.target.files[0];
-                readExcel(file);
-              }}
-            />
-            <button
-              onClick={() => {
-                writeToDatabase5();
-                notify();
-              }}
-            >
-              Submit
-            </button>
-          </p>
-        </div>
-        <div className="card card-1">
-          <h2 className="card__title">CS306</h2>
-          <p className="download6" onClick={saveFile6}>
-            <FileDownloadIcon />
-          </p>
-          <p className="card__apply">
-            <br></br>
-            <input
-              type="file"
-              onChange={(e) => {
-                const file = e.target.files[0];
-                readExcel(file);
-              }}
-            />
-            <button
-              onClick={() => {
-                writeToDatabase6();
-                notify();
-              }}
-            >
-              Submit
-            </button>
-          </p>
-        </div>
+        
       </div>
     </div>
   );

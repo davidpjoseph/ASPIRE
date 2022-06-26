@@ -15,7 +15,7 @@ function CreateCourse() {
    
 
    function writeUserData() {
-     set(ref(db, "Course/" + ccode), {
+     set(ref(db, "Course/"+ccode), {
        ccode: ccode,
        cname: cname,
      });
