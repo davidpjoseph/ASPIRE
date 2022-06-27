@@ -3,7 +3,7 @@ import "../Timetable.css";
 import ViewCourses from "./ViewCourses";
 import CreateCourse from "./CreateCourse";
 function Courses() {
-  const [active, setActive] = useState("Create");
+  const [active, setActive] = useState("View");
 
   return (
     <div>

@@ -9,7 +9,7 @@ body {
   position: absolute;
   width: 800px;
   height: 400px;
-  top: -40px;
+  top: 10px;
   left: 450px;
   display: flex;
   flex-wrap: wrap;

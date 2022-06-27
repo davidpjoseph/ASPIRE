@@ -24,7 +24,7 @@ function Studentlist3() {
   return (
     <div>
       <>
-        <Table className="single_sub">
+        <Table className="single_substud">
           <thead>
             <tr>
               {/* <th>#</th> */}

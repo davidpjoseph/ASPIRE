@@ -1,21 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React from 'react'
+import { Attendance1 } from "./../../components/List/Attendance";
 import "./Yearcard.css";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Button from "@duik/button";
-
-
-export default function Yearcard() {
-  const [sem, setSem] = React.useState("");
-  const [batch, setClass] = React.useState("");
-  function clickMe(){
-    alert("hello")
-  }
-
-  return (
-         <div className="yearcard_main">
+function Attendhod() {
+    const [sem, setSem] = React.useState("");
+    const [batch, setClass] = React.useState("");
+    const [active, setActive] = React.useState(""); 
+    return (
+      <div>
+        <div className="yearcard_main">
           <FormControl sx={{ m: 1, minWidth: 100 }} size="small">
             <InputLabel id="demo-simple-select-label">Sem</InputLabel>
             <Select
@@ -41,11 +38,15 @@ export default function Yearcard() {
               <MenuItem value={2}>B</MenuItem>
             </Select>
           </FormControl>
-          <div className="submitbutton">
-            <Button primary onClick={clickMe()}>
+          <FormControl sx={{ m: 2, minWidth: 120 }} size="small">
+            <Button primary onClick={() => setActive("View")} size="small">
               Submit
             </Button>
-          </div>
+          </FormControl>
+        </div>
+        {active === "View" && <Attendance1 />}
       </div>
-  );
+    );
 }
+
+export default Attendhod

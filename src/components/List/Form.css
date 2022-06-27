@@ -81,11 +81,56 @@
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   position: relative;
 }
+
+.single_substud {
+  font-family: arial, sans-serif;
+  left: 275px;
+  top: -707px;
+  width: 20cm;
+  border: 1px solid rgb(247, 245, 245);
+  text-align: center;
+  padding: 14px 28px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+.single_substud2 {
+  font-family: arial, sans-serif;
+  left: 410px;
+  top: -707px;
+  width: 20cm;
+  border: 1px solid rgb(247, 245, 245);
+  text-align: center;
+  padding: 14px 28px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+.single_subhod {
+  font-family: arial, sans-serif;
+  left: 265px;
+  top: -730px;
+  width: 20cm;
+  border: 1px solid rgb(247, 245, 245);
+  text-align: center;
+  padding: 14px 28px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  position: relative;
+}
 .single_subcoun {
   font-family: arial, sans-serif;
   left: 265px;
   top: -680px;
   width: 24cm;
+  border: 1px solid rgb(247, 245, 245);
+  text-align: center;
+  padding: 14px 28px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+.single_subcouncard {
+  font-family: arial, sans-serif;
+  left: 265px;
+  top: -680px;
+  width: 30cm;
   border: 1px solid rgb(247, 245, 245);
   text-align: center;
   padding: 14px 28px;
@@ -107,7 +152,18 @@
 .stud_weak {
   font-family: arial, sans-serif;
   left: 1060px;
-  top: -1128px;
+  top: -1165px;
+  width: 10cm;
+  border: 1px solid rgb(252, 251, 251);
+  text-align: center;
+  padding: 14px 28px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+.stud_weakhod {
+  font-family: arial, sans-serif;
+  left: 1060px;
+  top: -1231px;
   width: 10cm;
   border: 1px solid rgb(252, 251, 251);
   text-align: center;
@@ -118,7 +174,18 @@
 .stud_weak2 {
   font-family: arial, sans-serif;
   left: 1060px;
-  top: -1200px;
+  top: -1255px;
+  width: 10cm;
+  border: 1px solid rgb(252, 251, 251);
+  text-align: center;
+  padding: 14px 28px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+.stud_weakclass {
+  font-family: arial, sans-serif;
+  left: 1060px;
+  top: -1190px;
   width: 10cm;
   border: 1px solid rgb(252, 251, 251);
   text-align: center;
@@ -130,7 +197,40 @@
 .stud_bright {
   font-family: arial, sans-serif;
   left: 1061px;
-  top: -1188px;
+  top: -1240px;
+  width: 10cm;
+  border: 1px solid rgb(255, 254, 254);
+  text-align: center;
+  padding: 14px 28px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+.stud_brighthod {
+  font-family: arial, sans-serif;
+  left: 1061px;
+  top: -1240px;
+  width: 10cm;
+  border: 1px solid rgb(255, 254, 254);
+  text-align: center;
+  padding: 14px 28px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+.stud_brightcourse {
+  font-family: arial, sans-serif;
+  left: 1061px;
+  top: -1190px;
+  width: 10cm;
+  border: 1px solid rgb(255, 254, 254);
+  text-align: center;
+  padding: 14px 28px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+.stud_brightclass {
+  font-family: arial, sans-serif;
+  left: 1061px;
+  top: -1214px;
   width: 10cm;
   border: 1px solid rgb(255, 254, 254);
   text-align: center;
@@ -141,7 +241,7 @@
 .stud_bright2 {
   font-family: arial, sans-serif;
   left: 1061px;
-  top: -1214px;
+  top: -1268px;
   width: 10cm;
   border: 1px solid rgb(255, 254, 254);
   text-align: center;
@@ -160,6 +260,11 @@ tr:nth-child(even) {
 .row2 {
   color: rgb(1, 10, 2);
   text-decoration: solid black;
+}
+.row4{
+  background-color: 
+  rgba(22,98,208,0.6);
+  color: white;
 }
 
 .internal {

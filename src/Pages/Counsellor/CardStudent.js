@@ -41,7 +41,7 @@ function CardStudent() {
     <div>
       <>
         <ToastContainer/>
-        <Table className="single_subcoun">
+        <Table className="single_subcouncard">
           <thead>
             <tr>
               {/* <th>#</th> */}

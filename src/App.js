@@ -53,6 +53,9 @@ import Viewnotes from './Pages/Counsellor/Viewnotes';
 import Teacherfeed from './Pages/Teacher/Teacherfeed';
 import Mainanalysis from './Pages/Teacher/Courses/Analysis/Mainanalysis';
 import Inputmain from './Pages/Teacher/Input/Inputmain';
+import Studenthod from './Pages/HOD/Studenthod';
+import Attendhod from './Pages/HOD/Attendhod';
+import Counselhod from './Pages/HOD/Counselhod';
 
 function App() {
   
@@ -77,13 +80,22 @@ function App() {
 
           <Route path="teacher" element={<Teacher />}>
             <Route path="course" element={<Courses />} />
-            <Route path="analysis/:id" element={<Mainanalysis />} />
+            <Route path="analysis/:id" element={<Analysis1 />} />
             <Route path="uploads" element={<Inputmain />} />
             <Route path="students/:id" element={<StudentCoun />} />
             <Route path="feedback/:id" element={<Teacherfeed />} />
             <Route path="class" element={<Classlist />} />
             <Route path="counselling" element={<Counselling1 />} />
             <Route path="timetableteach" element={<Timetable />} />
+          </Route>
+
+          <Route path="hod" element={<Hod />}>
+            <Route path="students" element={<Studenthod />} />
+            <Route path="students/:id" element={<Studentoverall />} />
+            <Route path="attendance" element={<Attendhod />} />
+            <Route path="performance" element={<Classlist2 />} />
+            <Route path="counselling" element={<Counselhod />} />
+            <Route path="timetablehod" element={<Timetablehod />} />
           </Route>
 
           <Route path="counsellor" element={<Counsellor />}>
@@ -93,15 +105,6 @@ function App() {
             <Route path="notes/:id" element={<Notes />} />
             <Route path="view/:id" element={<Viewfeed />} />
             <Route path="viewnotes/:id" element={<Viewnotes />} />
-          </Route>
-
-          <Route path="hod" element={<Hod />}>
-            <Route path="students" element={<Studentlist3 />} />
-            <Route path="students/:id" element={<Studentoverall />} />
-            <Route path="attendance" element={<Attendance1 />} />
-            <Route path="performance" element={<Classlist2 />} />
-            <Route path="counselling" element={<Counselling />} />
-            <Route path="timetablehod" element={<Timetablehod />} />
           </Route>
         </Routes>
       </div>

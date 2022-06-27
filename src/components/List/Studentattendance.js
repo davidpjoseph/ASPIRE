@@ -10,11 +10,18 @@ import {
   query,
   equalTo,
 } from "firebase/database";
+import { useUserAuth } from "../../Context/userAuthContext";
+
 
 function Studentattendance() {
 const [data, setData] = useState({});
+const { user } = useUserAuth();
+const useremail = user.email;
+const weak = "jasminjames544@gmail.com";
+const bright = "jenniferjohn@gmail.com";
 useEffect(() => {
-  const dbRef = query(ref(db, "Attendance/"),orderByChild('Name'),equalTo("Jasmine James")); 
+  if (useremail === weak) {
+  const dbRef = ref(db, "Attendance/6");
   onValue(dbRef, (snapshot) => {
     if (snapshot.val() != null) {
       setData({ ...snapshot.val() });
@@ -24,12 +31,37 @@ useEffect(() => {
   });
   return () => {
     setData({});
-  };
+  };}
+  else if (useremail === bright) {
+    const dbRef = ref(db, "Attendance/7");
+    onValue(dbRef, (snapshot) => {
+      if (snapshot.val() != null) {
+        setData({ ...snapshot.val() });
+      } else {
+        setData({});
+      }
+    });
+    return () => {
+      setData({});
+    };
+  }
+  else{
+    const dbRef = ref(db, "Attendance/3");
+    onValue(dbRef, (snapshot) => {
+      if (snapshot.val() != null) {
+        setData({ ...snapshot.val() });
+      } else {
+        setData({});
+      }
+    });
+    return () => {
+      setData({});
+    };
+  }
 }, []);
  return (
   <div>
-    {Object.keys(data).map((row, index) => {
-        return (
+    
           <>
             <table className="single_attendance">
               <th>% Attendence for Each Subject</th>
@@ -53,19 +85,19 @@ useEffect(() => {
                 
                 
 
-                <td>{data[row].cs201}</td>
-                <td>{data[row].cs203}</td>
-                <td>{data[row].cs205}</td>
-                <td>{data[row].cs207}</td>
-                <td>{data[row].cs209}</td>
-                <td>{data[row].cs265}</td>
+                <td>{data.cs201}</td>
+                <td>{data.cs203}</td>
+                <td>{data.cs205}</td>
+                <td>{data.cs207}</td>
+                <td>{data.cs209}</td>
+                <td>{data.cs265}</td>
                 
               </tr>
               <tr></tr>
             </table>
           </>
-        );
-  })}
+        
+  
   </div>
 );
 }

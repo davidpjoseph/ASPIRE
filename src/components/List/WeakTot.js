@@ -41,14 +41,14 @@ export class WeakTot extends React.Component {
   render() {
     return (
       <div>
-        <table className="stud_weak2">
+        <table className="stud_weakclass">
           <tr colspan={5}>
             <th>
               <h2>Slow Learners</h2>
             </th>
           </tr>
         </table>
-        <Table className="stud_weak2">
+        <Table className="stud_weakclass">
           <tr>
             <th rowSpan={2}>Roll No.</th>
             <th rowSpan={2}>Student Name</th>

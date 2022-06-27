@@ -24,7 +24,7 @@ function Counselling1() {
   return (
     <div>
       <>
-        <Table className="single_sub">
+        <Table className="single_subcoun">
           <thead>
             <tr>
               {/* <th>#</th> */}

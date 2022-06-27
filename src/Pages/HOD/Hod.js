@@ -1,7 +1,6 @@
 import React from 'react'
 import Topbar from '../../components/Topbar/Topbar'
 import Navbar from './Navbar'
-
 import {
   BrowserRouter as Router,
   Route,

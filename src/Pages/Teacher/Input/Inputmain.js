@@ -3,7 +3,7 @@ import "../Timetable.css";
 import Input from "./Input";
 import Input1 from"./Input1";
 function Inputmain() {
-  const [active, setActive] = useState("Class");
+  const [active, setActive] = useState("Course");
 
   return (
     <div>

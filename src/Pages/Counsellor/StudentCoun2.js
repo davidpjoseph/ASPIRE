@@ -144,13 +144,13 @@ function StudentCoun2() {
             {/* <th>#</th> */}
             <th></th>
             <th></th>
-            <th className="row1">End Semester</th>
-            <th className="row1">S1</th>
-            <th className="row1">S2</th>
-            <th className="row1">S3</th>
-            <th className="row1">S4</th>
-            <th className="row1">S5</th>
-            <th className="row1">Supply</th>
+            <th className="row4">End Semester</th>
+            <th className="row4">S1</th>
+            <th className="row4">S2</th>
+            <th className="row4">S3</th>
+            <th className="row4">S4</th>
+            <th className="row4">S5</th>
+            <th className="row4">Supply</th>
           </tr>
         </thead>
         <tbody>

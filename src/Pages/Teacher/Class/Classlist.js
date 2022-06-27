@@ -7,7 +7,7 @@ import { WeakTot } from '../../../components/List/WeakTot'
 function Classlist() {
   return (
     <div>
-    <Studentlist2/>
+    <Studentlist2/> 
     <BrightTot/>
     <WeakTot/>
     </div>

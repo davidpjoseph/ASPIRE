@@ -14,7 +14,7 @@ import {
 import { Table } from "react-bootstrap";
 
 const db = getDatabase();
-export class BrightTot extends React.Component {
+export class BrightTot2 extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -22,11 +22,7 @@ export class BrightTot extends React.Component {
     };
   }
   componentDidMount() {
-    const dbRef = query(
-      ref(db, "Grade/"),
-      orderByChild("CGPA"),
-      startAt(8.5)
-    );
+    const dbRef = query(ref(db, "Grade/"), orderByChild("CGPA"), startAt(8.5));
     onValue(dbRef, (snapshot) => {
       let records = [];
       snapshot.forEach((childSnapshot) => {
@@ -41,14 +37,14 @@ export class BrightTot extends React.Component {
   render() {
     return (
       <div>
-        <table className="stud_brightclass">
+        <table className="stud_brighthod">
           <tr colspan={5}>
             <th>
               <h2>Bright Students</h2>
             </th>
           </tr>
         </table>
-        <Table className="stud_brightclass">
+        <Table className="stud_brighthod">
           <tr>
             <th rowSpan={2}>Roll No.</th>
             <th rowSpan={2}>Student Name</th>

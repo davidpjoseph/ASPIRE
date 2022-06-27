@@ -3,7 +3,7 @@ import "./Timetable.css"
 import ViewTimetable from './ViewTimetable';
 import TimetableCreate from './TimetableCreate';
 function Timetable() {
-  const[active,setActive]=useState("Create");
+  const[active,setActive]=useState("View");
 
   return (
     <div>

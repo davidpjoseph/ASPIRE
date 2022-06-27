@@ -1,26 +1,26 @@
-import "../../components/List/Form.css"
-import React,{useState, useEffect } from 'react'
+import "./Form.css";
+import React, { useState, useEffect } from "react";
 import { db } from "../../Firebase/Config";
-import {ref, onValue, orderByChild,query,startAt} from "firebase/database";
+import { ref, onValue } from "firebase/database";
 import { Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-function Counselling() {
-    const [data,setData]=useState({});  
-   	useEffect(() => { 
-     const dbRef =query(ref(db, "Weak/"),orderByChild('RS'),startAt(3));
-     onValue(dbRef, (snapshot) => {
-       if(snapshot.val()!=null){
-         setData({...snapshot.val()});
-       }else{
-         setData({});
-       }
-       });
-       return()=>{
-         setData({});
-       }
-   }, []);
-  
+function Studentlist4() {
+  const [data, setData] = useState({});
+  useEffect(() => {
+    const dbRef = ref(db, "Grade/");
+    onValue(dbRef, (snapshot) => {
+      if (snapshot.val() != null) {
+        setData({ ...snapshot.val() });
+      } else {
+        setData({});
+      }
+    });
+    return () => {
+      setData({});
+    };
+  }, []);
+
   return (
     <div>
       <>
@@ -29,12 +29,13 @@ function Counselling() {
             <tr>
               {/* <th>#</th> */}
               <th>Roll No</th>
-        	  <th>Name</th>
+              <th>Name</th>
               <th>S1</th>
               <th>S2</th>
               <th>S3</th>
               <th>S4</th>
               <th>S5</th>
+              <th>CGPA</th>
               <th>Backlogs</th>
             </tr>
           </thead>
@@ -49,14 +50,13 @@ function Counselling() {
                   <td>{data[row].S3}</td>
                   <td>{data[row].S4}</td>
                   <td>{data[row].S5}</td>
+                  <td>{data[row].CGPA}</td>
                   <td>{data[row].RS}</td>
-                  {/*
-                        <td>{index}</td>					  
-						 <td>{row.data.Name}</td>
-                          */}
+                  {/*<td>{index}</td>*/}
+                  {/* <td>{row.data.Name}</td> */}
                   <td>
                     <Link to={`/hod/students/${data[row].RollNo}`}>
-                      <button className="buttonclick2">View Profile</button>
+                      <button className="buttonclick1">View Profile</button>
                     </Link>
                   </td>
                 </tr>
@@ -69,4 +69,4 @@ function Counselling() {
   );
 }
 
-export default Counselling;
+export default Studentlist4;

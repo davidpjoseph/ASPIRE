@@ -12,7 +12,7 @@ function Login() {
   const { logIn } = useUserAuth();
   const navigate = useNavigate();
   const studweak = "jasminjames544@gmail.com";
-  const studbright = "jenniferjohnson@gmail.com";
+  const studbright = "jenniferjohn@gmail.com";
   const hod = "hodcsesjcet@gmail.com";
   const teach = "teachercsesjcet@gmail.com";
   const coun = "counsellorsjcet@gmail.com";
