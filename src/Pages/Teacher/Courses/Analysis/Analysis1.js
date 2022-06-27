@@ -39,7 +39,7 @@ function Analysis1() {
   }, [id]);
   console.log("data1", data1);
   useEffect(() => {
-    const dbRef2 = query(ref(db, `Subject1/${id}`),orderByChild("internal1"),startAt(40),);
+    const dbRef2 = query(ref(db, `Subject1/${id}`),orderByChild("internal1"),startAt(45),);
     onValue(dbRef2, (snapshot) => {
       if (snapshot.val() != null) {
         setData2({ ...snapshot.val() });
