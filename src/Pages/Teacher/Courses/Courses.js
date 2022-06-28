@@ -9,7 +9,7 @@ function Courses() {
     <div>
       <nav>
         <button onClick={() => setActive("Create")} className="time_button1">
-          Create Course
+          Add Course
         </button>
         <button onClick={() => setActive("View")} className="time_button2">
           View Course
